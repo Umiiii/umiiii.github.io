@@ -29,6 +29,7 @@ google_analytics: UA-123910606-1
 url: umiiii.github.io
 baseurl: /
 
+remote_theme: yous/whiteglass
 # Build settings
 theme: jekyll-whiteglass
 plugins:
