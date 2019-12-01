@@ -25,13 +25,15 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://umi.cat" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: UA-123910606-1
-
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 url: umiiii.github.io
 baseurl: /
 
 remote_theme: yous/whiteglass
 # Build settings
-theme: jekyll-whiteglass
+
 plugins:
   - jekyll-archives
   - jekyll-paginate
