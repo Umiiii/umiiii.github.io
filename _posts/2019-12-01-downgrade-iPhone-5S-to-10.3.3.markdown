@@ -70,7 +70,7 @@ dyld: Library not loaded: /usr/local/opt/usbmuxd/lib/libusbmuxd.4.dylib
 
 解决方法：下载`libusbmuxd.4.dylib`。
 
-这里，如果你安装了高版本libusbmuxd.6.dylib，千万不要自作聪明建立alias，这样futurerestore可以成功执行，但一旦刷机，就会报错。
+这里，如果你安装了高版本libusbmuxd.6.dylib，千万不要自作聪明建立软链接，这样futurerestore可以成功执行，但一旦刷机，就会报错。
 
 ## 卡在Checking filesystem (15)
 ```bash
