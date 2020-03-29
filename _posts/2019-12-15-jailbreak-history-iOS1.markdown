@@ -74,7 +74,7 @@ iOS 版本: iOS 1.0 - iOS 1.0.2
 
 
 修复：
-- 在 iOS 1.1.2 后更新 iBoot，删除了`cp`以及其他一些命令。
+- 在 iOS 1.0.2 后更新 iBoot，删除了`cp`以及其他一些命令。
 
 ## libtiff-exploit (CVE-2006-3459)
 
@@ -211,6 +211,7 @@ env_blacklist_nvram(const char *name)
 - 破坏 iOS 引导链
 
 在之后长达 12 年中，围绕着这两件事情，苹果跟安全研究员们展开了斗智斗勇。
+
 
 # 参考资料
 

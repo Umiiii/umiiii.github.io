@@ -12,3 +12,8 @@ https://www.nevermoe.com/
 https://yihui.name/
 
 虽然与技术没有太大关系，但是文笔写的非常好
+
+
+https://typeblog.net/
+
+技术流博客
