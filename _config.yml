@@ -30,7 +30,6 @@ kramdown:
   syntax_highlighter: rouge
 url: umiiii.github.io
 baseurl: /
-theme: jekyll-whiteglass
 remote_theme: yous/whiteglass
 # Build settings
 
