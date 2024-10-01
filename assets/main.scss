@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 // Our variables
-$base-font-family: Bitter, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, sans-serif;
+$base-font-family:  'Source Han Serif CN', serif;
 $monospace-font-family: Monaco, Menlo, Consolas, "Courier New", DotumChe, monospace;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -33,8 +33,8 @@ $on-laptop:        800px;
 // Use media queries like this:
 // @include media-query($on-palm) {
 //     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
+//         padding-right: $spacing-unit * 0.5;
+//         padding-left: $spacing-unit * 0.5;
 //     }
 // }
 @mixin media-query($device) {
@@ -43,7 +43,179 @@ $on-laptop:        800px;
   }
 }
 
+@font-face {
+  font-family: 'Source Han Serif CN';
+  src: local('Source Han Serif CN'), local('Source Han Serif SC'),
+       local('Source Han Serif TC'), local('Source Han Serif TW'),
+       local('Source Han Serif'), local('Noto Serif CJK SC'), local('Songti SC'), local('SimSong'),
+       url('https://cdn.jsdelivr.net/gh/yihui/cron/fonts/SourceHanSerifCN-Regular-yihui.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Kai SC';
+  src: local('Kaiti'), local('Kaiti SC'), local('STKaiti'), local('楷体'), local('SimKai'), local('AR PL KaitiM GB'), local('DFKai-SB'), local('FandolKai'),
+       url('https://cdn.jsdelivr.net/gh/yihui/cron/fonts/gkai00mp-yihui.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Kai TC';
+  src: url('https://cdn.jsdelivr.net/gh/yihui/cron/fonts/bkai00mp-yihui.woff2') format('woff2');
+}
+body {
+  font-family: 'Source Han Serif CN', serif;
+}
+.home blockquote, .cn blockquote, .kai, .cn em, .cn .side, .hash-note, .hide-notes .toggle-notes {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Kai SC', 'Kai TC', serif;
+}
+code {
+  font-family: Consolas, Courier, 'Lucida Console', 'Courier New', 'Kai SC', 'Kai TC', monospace;
+}
+pre, code {
+  font-size: .95em;
+}
+.cn em, .cn .title {
+  font-style: normal;
+}
 
+.main {
+  line-height: 1.75;
+}
+.archive {
+  max-width: none;
+  width: 100%;
+}
+.archive > ul > li {
+  list-style: none;
+}
+.cn .archive > ul > li {
+  display: inline-block;
+  margin-right: 1em;
+}
+.main h2 {
+  line-height: 1.25;
+}
+.main h1, .main h2 {
+  text-align: center;
+  margin: 2em 0 1em;
+}
+dl, fieldset {
+  background-color: lightyellow;
+  font-size: .9em;
+  border-width: 1px;
+}
+dt, legend {
+  font-weight: bold;
+}
+.archive > h2 {
+  text-align: initial;
+}
+.main > ul > li > span:first-child, .main > p > span:first-child, .main > p .subtitle, .hash-note, .post-nav, .stats {
+  color: #666;
+  font-size: .9em;
+}
+.stats {
+  text-align: right;
+}
+.cn .post-nav {
+  font-size: initial;
+}
+.en .main > p:first-of-type::first-line {
+  font-variant: small-caps;
+  letter-spacing: .05em;
+  font-size: 1.1em;
+}
+.en .main > p:first-of-type::first-letter {
+  font-size: 3em;
+  padding: .1em .1em 0 0;
+  float: left;
+  line-height: 1em;
+  font-family: cursive;
+}
+blockquote {
+  margin: 1em 0;
+  padding: 0 2em;
+}
+.single blockquote {
+  background: none;
+  border-left-width: 3px;
+  padding: 0 2em;
+}
+.home blockquote, .cn blockquote:not(:hover) {
+  border-left-color: transparent;
+}
+ol, ul {
+  padding: 0 0 0 20px;
+}
+ol ol {
+  list-style: lower-roman;
+}
+code[class="fullwidth"] {
+  background: none;
+}
+.comments {
+  margin-top: 1em;
+}
+.cn del {
+  background-color: #444;
+}
+.cn del:hover {
+  background-color: inherit;
+  text-decoration: inherit;
+}
+.hash-note, .side { background: lightyellow; }
+.hash-note a { color: inherit; }
+span.hash-note::before { content: "　# "; }
+.hide-notes .hash-note, .unlist { display: none !important; }
+.side { padding: 1em 2em; }
+.side > p:first-child { margin-top: 0; }
+.side > p:last-child { margin-bottom: 0; }
+.bg-number, .note-ref:has(+ .side:hover) {
+  background: var(--bg-body);
+  filter: invert(1);
+  opacity: .6;
+}
+.bg-number {
+  padding: .1em;
+}
 
+@media only screen and (min-width: 768px) {
+  pre, table {
+    width: auto;
+    max-width: none;
+    margin-left: auto;
+  }
+  .cn #TableOfContents {
+    columns: 2;
+  }
+  .nav-next {
+    border-right: 1px solid;
+    padding-right: 1em;
+  }
+  .nav-prev {
+    border-left: 1px solid;
+    padding-left: 1em;
+  }
+}
+
+@media print {
+  del, footer, .nav-top, #TableOfContents, .comments, h1.title::before {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .has-sidenotes .main, .has-sidenotes .fullwidth {
+    margin-left: 0;
+  }
+  .side-right {
+    float: right;
+    clear: right;
+    background: none;
+    padding: 0 0 1em 0;
+    width: calc(var(--body-width) - var(--text-width) - 2.5rem * 2 - 2rem);
+    margin-right: calc(var(--text-width) + 2.5rem * 2 - var(--body-width));
+  }
+  blockquote .side-right {
+    margin-right: calc(var(--text-width) + 2.5rem * 2 - var(--body-width) - 2rem);
+  }
+}
 // Import partials from the `whiteglass` theme.
 @import "whiteglass";
