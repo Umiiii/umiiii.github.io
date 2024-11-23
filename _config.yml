@@ -32,6 +32,9 @@ url: umiiii.github.io
 baseurl: /
 remote_theme: yous/whiteglass
 # Build settings
+include:
+  - _includes/ads.txt
+  - _includes/privacy.html
 
 plugins:
   - jekyll-archives
