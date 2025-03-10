@@ -35,6 +35,8 @@ remote_theme: yous/whiteglass
 include:
   - _includes/ads.txt
   - _includes/privacy.html
+  - _posts/bq_3.html
+  - _posts/bq.html
 
 plugins:
   - jekyll-archives
